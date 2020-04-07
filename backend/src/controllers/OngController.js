@@ -1,5 +1,5 @@
 const crypto = require('crypto');
-const connection = riqueri('../database/connection');
+const connection = require('../database/connection');
 
 module.exports = {
     async index(request, response) {
@@ -18,6 +18,7 @@ module.exports = {
             name,
             email,
             whatsapp,
+            city,
             uf
         });
     

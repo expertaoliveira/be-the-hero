@@ -1,12 +1,12 @@
-const connection = riqueri('../database/connection');
+const connection = require('../database/connection');
 
 module.exports = {
     async create(request, response) {
         const { id } = request.body;
     
         const ong = await connection('ongs')
-            .select('name')
             .where('id', id)
+            .select('name')
             .first();
         
         if (!ong) {
